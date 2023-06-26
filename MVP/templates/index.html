@@ -1,34 +1,23 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="English">
 <head>
-    <meta charset="UTF-8">
-    <title>GPTeacher</title>
-    <link rel="stylesheet" type="text/css" href="/MVP/static/styles/styles.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Flask App</title>
 </head>
 <body>
-<main>
-    <header>
-        <img src="/MVP/static/dark_logo.png" alt="logo" id="logo">
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Upgrade</a></li>
-                <li><a href="/log_in">Log in</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="file-section">
-    <h1>Upload your file</h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="document" class = 'file-input' id="fileInput">
-        <label for="fileInput" class="file-label">Choose File</label>
-        <input type="submit" value="Upload" class="submit-button">
-    </form>
-    </section>
-    <h2 id="gqs">Generated Questions:</h2>
+<h1>Organize your day!</h1>
+<form action="/generate_prompt" method="POST">
+    <input type="text" name="prompt" placeholder="Enter your prompt">
+    <input type="radio" id="time_hourly" name="time_checkbox" value="hourly">
+    <label class="radio" for="time_hourly">Hourly</label>
+    <br>
+    <input type="radio" id="parts" name="time_checkbox" value="by parts of the day">
+    <label class="radio" for="parts">Parts of the day</label>
+
+    <button type="submit">Generate</button>
+</form>
 
 
-</main>
 </body>
 </html>
