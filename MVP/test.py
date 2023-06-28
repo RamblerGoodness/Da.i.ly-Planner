@@ -1,11 +1,6 @@
 import openai
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-f = open("apt.txt", "r")
-key = f.read()
-openai.api_key = key
+import config
+openai.api_key = config.api_key()
 
 
 def generate_prompt():
