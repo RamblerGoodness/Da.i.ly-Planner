@@ -1,8 +1,8 @@
 import openai
 import json
-import config.py
+import config
 
-openai.api_key = config.api_key
+openai.api_key = config.api_key()
 
  
 
