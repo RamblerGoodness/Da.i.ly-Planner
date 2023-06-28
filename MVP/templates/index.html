@@ -1,13 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="English">
 <head>
     <link rel="stylesheet" href="../static/styles.css">
     <title>Flask App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle form submission
+            $("form").submit(function(event) {
+                event.preventDefault(); // Prevent page refresh
+
+                var promptValue = $("input[name='prompt']").val();
+                var timeCheckboxValue = $("input[name='time_checkbox']:checked").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "/generate_prompt",
+                    data: {
+                        prompt: promptValue,
+                        time_checkbox: timeCheckboxValue
+                    },
+                    success: function(response) {
+                        var generatedText = response.generated_text;
+                        var jsonData = response.json_data;
+
+                        // Update generated text
+                        $(".generated-text").text(generatedText);
+
+                        // Update JSON data
+                        var jsonContainer = $(".json-container");
+                        jsonContainer.empty();
+
+                        $.each(jsonData, function(key, value) {
+                            jsonContainer.append("<li>" + key + ": " + value + "</li>");
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 <h1>Organize your day!</h1>
-<form action="/generate_prompt" method="POST">
+<form>
     <input type="text" name="prompt" placeholder="Enter your prompt">
     <input type="radio" id="time_hourly" name="time_checkbox" value="hourly">
     <label class="radio" for="time_hourly">Hourly</label>
@@ -18,6 +53,13 @@
     <button type="submit">Generate</button>
 </form>
 
+<!-- Here we remove the Jinja2 rendering and let JavaScript handle updating these sections -->
+
+<h2>Generated Response:</h2>
+<p class="generated-text"></p>
+
+<h2>JSON Data:</h2>
+<ul class="json-container"></ul>
 
 </body>
 </html>
