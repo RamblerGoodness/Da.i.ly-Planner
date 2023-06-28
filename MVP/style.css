@@ -1,6 +1,46 @@
-/*
+ /*   */
 
-*/
+/* 
+FFB300
+FFD52E
+7EC9E2
+FFA3A3
+6C4E30
+colors 
+ */
+
+ :root {
+    --primary-color: #FFB300;
+    --secondary-color: #FFD52E;
+    --tertiary-color: #6C4E30;
+    --accent1-color: #7EC9E2;
+    --accent2-color: #FFA3A3;
+    --background-color: #;
+    --background-gray: #eaedee;
+    --background-black: #0a0b0b;
+  
+    --heading-font: Verdana, Arial, sans-serif;
+    --paragraph-font: Tahoma, 'Trebuchet MS', sans-serif;
+  
+    --headline-color-on-white: #477B7A;
+    --headline-color-on-color: #fcfbfb;
+    --paragraph-color-on-white: #ad704d;
+    --paragraph-color-on-color: #fcfbfb;
+    --paragraph-background-color: #477B7A;
+    --nav-link-color: #333939;
+    --nav-background-color: #EBAF8D;
+    --nav-hover-link-color: #fcfbfb;
+    --nav-hover-background-color: #477B7A;
+    --footer-background-color: #477B7A;
+    --background-gradient: linear-gradient(135deg, #52EBEA 8%, #2B9E9D 40%, #EBAF8D 85%);
+    --gradient: linear-gradient(135deg, #C31A86 8%, #933FA0 50%, #00ADEE 92%);
+    --brown-gradient: linear-gradient(135deg, #EBAF8D, #C78965 50%);
+    --blue-gradient: radial-gradient(#52EBEA 30%, #2B9E9D 95%);
+    --bluelinear-gradient: linear-gradient(#52EBEA 30%, #2B9E9D 95%);
+}
+
+
+
 
 header {
     display: grid;
@@ -9,12 +49,12 @@ header {
 
 }
 
-#logo {
+.logo {
     grid-column: 1/2;
     grid-row: 1/2;
 }
 
-#title {
+.title {
     grid-column: 2/3;
     grid-row:1/2;
 }
@@ -22,6 +62,7 @@ header {
 main.h2 {
     grid-column: 2/3;
     grid-row: 2/3;
+    color: 
 }
 
 main.p {
