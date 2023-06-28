@@ -1,10 +1,11 @@
 # Flask app that takes in a prompt and generates a schedule based on the prompt
 from flask import Flask, render_template, request
 import openai
+import config
 
 # Flask app
 app = Flask(__name__)
-openai.api_key = 'apt.env'
+openai.api_key = config.api_key()
 
 @app.route('/')
 def index():
