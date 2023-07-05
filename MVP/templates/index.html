@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
     <title>MVP</title>
 </head>
-
 <body>
     <header>
-        <img class="logo" src="{{ url_for('static', filename='images/') }}" alt="logo">
-        <button class="button_1"> button </button>
-        <h1 class="title"> DA.I.LY PLANNER </h1>
-        <button class="button_2"> button </button>
+        <nav>
+            <a href="#"><img class="logo" src="logo.png" alt="logo"></a>
+            <h1 class="title">D<span class="ai-highlight">A.I.</span>LY PLANNER</h1>
+        </nav>
     </header>
-
     <main>
-        <h2> Organize Your Day </h2>
-        <p>Instructions here...</p>
-        <form action="/generate_prompt" method="post">
-            <input type="text" name="prompt">
-            <input type="checkbox" name="time_checkbox">
-            <label for="time_checkbox">Sort by time</label>
-            <button class="generate" type="submit">Generate</button>
-        </form>
-        {% if generated_text %}
-        <h2> Your Generated Schedule: </h2>
-        <p>{{ generated_text }}</p>
-        {% endif %}
+        <div class="instructions">
+            <h2>Organize Your Day!</h2>
+            <p>Enchiladas mediterranean habanero golden cocoa coconut milk four-layer cumin strawberry mango smoothie ultra creamy avocado pesto creamiest almond milk chai latte sweet potato Thai super chili pasta. Walnut mushroom tart pumpkin roasted brussel sprouts udon noodles cherry bomb crispy cashew Caribbean red habanero garlic sriracha noodles cherries onion ginger carrot spiced juice Thai curry mocha chocolate. Strawberry spinach salad blood orange smash Thai basil curry mint lime taco salsa Indian spiced street style Thai basil tacos coconut grenadillo smoked tofu lavender lemonade pine nuts strawberries naga viper pinch of yum vine tomatoes samosa kung pao pepper with winter leek hot raspberry fizz.</p>
+        </div>
+        <div class="input">
+            <form action="{{ url_for('generate_prompt') }}" method="post">
+                <textarea id="prompt" cols="30" rows="10"></textarea>
+                <label for="time_checkbox">Sort by time:</label>
+                <input type="checkbox" id="time_checkbox" name="time_checkbox">
+                <button class="generate" type="submit">GENERATE</button>
+            </form>
+        </div>
+        <div class="output">
+            <h2>Your <span class="logo-gradient">D<span class="ai-highlight">A.I.</span>LY PLAN</span>:</h2>
+            <br>
+            <p>{{ generated_text }}</p>
+        </div>
     </main>
-
     <footer>
-        <h3 class="creators"> Creator's names here... </h3>
-        <button class="button_3"></button>
-        <button class="Contact Us"> Contact Us </button>
+        <p>DA.I.LY PLANNER &copy; 2023 [INSERT Creators]</p>
+        <p><a href="contactus.html">Contact Us</a></p>
     </footer>
-
 </body>
-
 </html>
