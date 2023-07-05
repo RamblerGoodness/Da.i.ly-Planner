@@ -1,82 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Bitter:wght@400;500;600&display=swap');
+
+:root {
+   --primary-color: #03658C;
+   --secondary-color: #0BB3D9;
+   --tertiary-color: #012840;
+   --accent1-color: #f6f9ff;
+   --accent2-color: #41E1F2;
+   --background-color: #f6f9ff;
+   --background-black: #011826;
+   --heading-font: 'Agdasima', sans-serif;
+   --paragraph-font: 'Bitter', serif;
+   --headline-color-on-white: #03658C;
+   --headline-color-on-color: #f6f9ff;
+   --paragraph-color-on-white: #03658C;
+   --paragraph-color-on-color: #f6f9ff;
+   --paragraph-background-color: #03658C;
+   --nav-link-color: #333939;
+   --nav-background-color: #03658C;
+   --nav-hover-link-color: #fcfbfb;
+   --nav-hover-background-color: #477B7A;
+   --footer-background-color: #477B7A;
+   --gradient: linear-gradient(0deg, #03658C 8%, #0BB3D9 50%, #41E1F2 92%);
+   --footer-gradient: linear-gradient(180deg, #03658C 8%, #012840 80%);
+   --brown-gradient: linear-gradient(135deg, #EBAF8D, #C78965 50%);
+   --blue-gradient: radial-gradient(#52EBEA 30%, #2B9E9D 95%);
+   --bluelinear-gradient: linear-gradient(#52EBEA 30%, #2B9E9D 95%);
+}
+
+h1, h2, h3, h4, h5 {
+   font-family: var(--heading-font);
+   color: var(--headline-color-on-white)
+}
+
+p {
+   font-family: var(--paragraph-font);
+   font-size: 1.2em;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #343541;
-    margin: 0;
-    padding: 20px;
+   margin: 0;
+   background-color: var(--background-black);
 }
 
-h1 {
-    color: #19c37d;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.radio {
-    color: #19c37d;
-}
-
-form {
+/* NAV BAR */
+nav {
     display: grid;
-    justify-items: center;
-    align-items: center; /* Add this line */
-    margin-bottom: 20px;
+    grid-template-columns: 100px 1fr 100px;
+    background-image: var(--background-black);
 }
 
-input[type="text"] {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 10px;
-    font-size: 16px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.logo {
+    grid-column: 1/2;
+    width: 80px;
 }
 
-/* Add this block */
-.radio-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+.title {
+    grid-column: 2/3;
+    font-size: 4em;
+    letter-spacing: 4px;
+    margin: auto;
+    background-image: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 0 10px
 }
 
-button[type="submit"] {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+.ai-highlight {
+   color: var(--accent1-color)
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+/* INSTRUCTIONS DIV */
+.instructions {
+   background: var(--tertiary-color);
+   color: var(--paragraph-background-color);
+   border: var(--secondary-color) 3px solid;
+   border-radius: 5px;
+   margin: 3.5em auto;
+   padding: 1em;
+   max-width: 80%;
 }
 
-h2 {
-    color: white;
-    margin-top: 20px;
+.instructions h2 {
+   color: var(--headline-color-on-color);
+   margin: 0.5em auto;
+   padding: 0 20px;
+   font-family: var(--paragraph-font);
+   font-size: 2em;
+   letter-spacing: 2px;
+   width: max-content;
+   text-align: center;
 }
 
-.generated-text {
-    color: white;
-    background-color: #444654;
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+.instructions-title {
+   font-size: 1.5em;
+   font-style: bold;
 }
 
-@media screen and (max-width: 600px) {
-    form {
-        grid-template-columns: 1fr;
-        grid-gap: 10px;
-    }
-
-    .radio{
-        font-size: larger;
-    }
+.instructions p {
+   text-indent: 3em;
+   color: var(--paragraph-color-on-color)
 }
+
+/* INPUT DIV */
+.input {
+   text-align: center;
+   padding: 30px;
+   background-image: var(--gradient);
+}
+
+#prompt {
+   display: block;
+   width: 50vw;
+   font-size: 1.2em;
+   font-family: var(--paragraph-font);
+   background-color: var(--background-black);
+   color: var(--secondary-color);
+   border: 3px solid var(--primary-color);
+   border-radius: 5px;
+   margin: 20px auto;
+   padding: 10px;
+}
+
+.generate {
+   background-color: var(--tertiary-color);
+   color: var(--accent1
