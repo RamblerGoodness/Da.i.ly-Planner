@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Bitter:wght@400;500;600&display=swap');
+
+
+
+
+ :root {
+
+    --primary-color: #56AFCD;
+
+    --secondary-color: #C9F8FA;
+
+    --tertiary-color: #007690;
+
+    --accent1-color: #F5F5DC;
+
+    --accent2-color: #FA8072;
+
+    --background-color: #C9F8FA;
+
+    --background-black: #1b1d1e;
+
+ 
+
+    --heading-font: 'Agdasima', sans-serif;
+
+    --paragraph-font: 'Bitter', serif;
+
+ 
+
+    --headline-color-on-white: #007690;
+
+    --headline-color-on-color: #F5F5DC;
+
+    --paragraph-color-on-white: #007690;
+
+    --paragraph-color-on-color: #F5F5DC;
+
+    --paragraph-background-color: #477B7A;
+
+    --nav-link-color: #333939;
+
+    --nav-background-color: #EBAF8D;
+
+    --nav-hover-link-color: #fcfbfb;
+
+    --nav-hover-background-color: #477B7A;
+
+    --footer-background-color: #477B7A;
+
+    --background-gradient: linear-gradient(135deg, #52EBEA 8%, #2B9E9D 40%, #EBAF8D 85%);
+
+    --gradient: linear-gradient(135deg, #C31A86 8%, #933FA0 50%, #00ADEE 92%);
+
+    --brown-gradient: linear-gradient(135deg, #EBAF8D, #C78965 50%);
+
+    --blue-gradient: radial-gradient(#52EBEA 30%, #2B9E9D 95%);
+
+    --bluelinear-gradient: linear-gradient(#52EBEA 30%, #2B9E9D 95%);
+
+}
+
+
+
+
+
+
+h1, h2, h3, h4, h5 {
+
+    font-family: var(--heading-font);
+
+    color: var(--headline-color-on-white)
+
+}
+
+p {
+
+    font-family: var(--paragraph-font);
+
+    font-size: 1.2em;
+
+}
+
+body {
+
+    margin: 0;
+
+    background-color: var(--background-color);
+
+}
+
+
+
+
+/*              NAV BAR             */
+
+nav {
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr 100px;
+
+    background-color: var(--primary-color);
+
+}
+
+.logo {
+
+    grid-column: 1/2;
+
+    width: 80px;
+
+}
+
+.title {
+
+    grid-column: 2/3;
+
+    font-size: 3em;
+
+    letter-spacing: 4px;
+
+    margin: auto;
+
+    background-color: var(--accent1-color);
+
+    color: var(--tertiary-color);
+
+    border-radius: 10px;
+
+    padding: 0 10px
+
+}
+
+.ai-highlight {
+
+    color: var(--accent2-color)
+
+}
+
+
+
+
+/*              INSTRUCTIONS DIV             */
+
+.instructions {
+
+    background: var(--accent1-color);
+
+    color: var(--paragraph-background-color);
+
+    border: var(--primary-color) 4px solid;
+
+    border-radius: 10px;
+
+    margin: 3.5em auto;
+
+    padding: 1em;
+
+    max-width: 80%;
+
+}
+
+.instructions h2 {
+
+    background: var(--accent1-color);
+
+    color: var(--accent2-color);
+
+    margin: 0.5em auto;
+
+    padding: 0 20px;
+
+    font-size: 2em;
+
+    width: max-content;
+
+    text-align: center;
+
+}
+
+.instructions-title {
+
+    font-size: 1.5em;
+
+    font-style: bold;
+
+}
+
+.instructions p {
+
+    text-indent: 3em;
+
+}
+
+
+
+
+/*              INPUT DIV             */
+
+.input {
+
+    text-align: center;
+
+    padding: 30px;
+
+    background-color: var(--primary-color);
+
+}
+
+#input-textbox {
+
+    display: block;
+
+    width: 50vw;
+
+    font-size: 1.2em;
+
+    font-family: var(--paragraph-font);
+
+    background-color: var(--accent1-color);
+
+    color: var(--tertiary-color);
+
+    border: 3px solid var(--primary-color);
+
+    border-radius: 10px;
+
+    margin: 20px auto;
+
+    padding: 10px;
+
+}
+
+.generate {
+
+    background-color: var(--accent2-color);
+
+    color: var(--accent1-color);
+
+    font-size: 2em;
+
+    font-family: var(--paragraph-font);
+
+    letter-spacing: 2px;
+
+    border: 2px solid var(--tertiary-color);
+
+    border-radius: 10px;
+
+    padding: 5px 10px;
+
+    transition: all 0.4s;
+
+
+
+
+    &:hover {
+
+        transform: scale(1.1);
+
+        background-color: var(--accent1-color);
+
+        color: var(--accent2-color);
+
+        border: 0px solid var(--tertiary-color);
+
+    }
+
+}
+
+
+
+
+/*              OUTPUT DIV             */
+
+.output {
+
+    background: var(--accent1-color);
+
+    color: var(--paragraph-background-color);
+
+    border: var(--primary-color) 4px solid;
+
+    border-radius: 10px;
+
+    margin: 3.5em auto;
+
+    padding: 0 1em;
+
+    max-width: 80%;
+
+}
+
+.output h2 {
+
+    color: var(--primary-color);
+
+}
+
+
+
+
+
+
+/*              FOOTER             */
+
+footer {
+
+    background: var(--accent1-color);
+
+    color: var( --paragraph-color-on-white);
+
+    margin-top: 3em;
+
+    padding: 50px;
+
+}
+
+footer p {
+
+    display: inline;
+
+    padding: 0 3em;
+
+}
+
+footer p a {
+
+    text-decoration: none;
+
+    color: var(--paragraph-color-on-white);
+
+
+
+
+    &:hover {
+
+        text-decoration: underline;
+
+    }
+
+}
+
+

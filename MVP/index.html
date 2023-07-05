@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>MVP</title>
-    <script>
-        function giveInput(userInput) {
-            car
-        }
-
-        function returnSchedule(AIfile) {
-            var schedule = AIfile;
-
-        }
-
-    </script>
 </head>
 
 <body>
     <header>
-        <img class="logo" src="images/" alt="logo">
-        <button class="button_1"> button </button>
-        <h1 class="title"> DA.I.LY PLANNER </h1>
-        <button class="button_2"> button </button>
-
+        <nav>
+            <a href="index.html"><img class="logo" src="logo.png" alt="logo"></a>
+            <h1 class="title"> D<span class="ai-highlight">A.I.</span>LY PLANNER </h1>
+        </nav>
     </header>
-
     <main>
-        <h2> Organize Your Day </h2>
-        <p>[Instructions]</p>
-        <input type="text">
-        <button class="generate">Generate</button>
+        <div class="instructions">
+            <h2>Organize Your Day!</h2>
+            <p>  </p>
+        </div>
+
+        <div class="input">
+            <textarea name="todolist" id="input-textbox" cols="30" rows="10"></textarea>
+            <button class="generate">GENERATE</button>
+        </div>
+        <div class="output">
+            <h2>Your <span class="logo-gradient">D<span class="ai-highlight">A.I.</span>LY PLAN</span>:</h2>
+            <br>
+            <h2 class="text-output">[put the schedule here]</h2>
+        </div>
     </main>
 
     <footer>
-        <h3 class="ceators"> [people who created the website] </h3>
-        <button class="button_3"></button>
-        <button class="Contact Us"> Contact Us </button>
-        
-    </footer>
 
+        <p>DA.I.LY PLANNER &copy; 2023 Savanna Whittaker, Hans Capener, Heber Uchytil, Sam Creviston</p>
+        <p><a href="contactus.html">Contact Us</a></p>
+
+    </footer>
 </body>
 
 </html>
