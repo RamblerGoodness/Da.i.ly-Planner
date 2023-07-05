@@ -1,23 +1,41 @@
-
 <!DOCTYPE html>
-<html lang="English">
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="../static/styles.css">
-    <title>Flask App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>MVP</title>
 </head>
+
 <body>
-<h1>Organize your day!</h1>
-<form action="/generate_prompt" method="POST">
-    <input type="text" name="prompt" placeholder="Enter your prompt">
-    <input type="radio" id="time_hourly" name="time_checkbox" value="hourly">
-    <label class="radio" for="time_hourly">Hourly</label>
-    <br>
-    <input type="radio" id="parts" name="time_checkbox" value="by parts of the day">
-    <label class="radio" for="parts">Parts of the day</label>
+    <header>
+        <img class="logo" src="{{ url_for('static', filename='images/') }}" alt="logo">
+        <button class="button_1"> button </button>
+        <h1 class="title"> DA.I.LY PLANNER </h1>
+        <button class="button_2"> button </button>
+    </header>
 
-    <button type="submit">Generate</button>
-</form>
+    <main>
+        <h2> Organize Your Day </h2>
+        <p>Instructions here...</p>
+        <form action="/generate_prompt" method="post">
+            <input type="text" name="prompt">
+            <input type="checkbox" name="time_checkbox">
+            <label for="time_checkbox">Sort by time</label>
+            <button class="generate" type="submit">Generate</button>
+        </form>
+        {% if generated_text %}
+        <h2> Your Generated Schedule: </h2>
+        <p>{{ generated_text }}</p>
+        {% endif %}
+    </main>
 
+    <footer>
+        <h3 class="creators"> Creator's names here... </h3>
+        <button class="button_3"></button>
+        <button class="Contact Us"> Contact Us </button>
+    </footer>
 
 </body>
+
 </html>
